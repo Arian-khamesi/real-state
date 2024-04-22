@@ -1,9 +1,9 @@
 import SignupPage from "@/template//SignupPage"
 
-function Signup() {
-    return (
+function Signup(){
+    return(
         <>
-            <SignupPage />
+        <SignupPage/>
         </>
     )
 }

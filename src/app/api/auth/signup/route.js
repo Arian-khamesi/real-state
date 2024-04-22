@@ -43,7 +43,6 @@ export async function POST(req) {
             { message: "User successfully created" },
             { status: 200 }
         )
-
     }
     catch (err) {
         console.log(err);
