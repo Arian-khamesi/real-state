@@ -1,8 +1,19 @@
-const { default: DashboardPage } = require("@/template//DashboardPage");
+import connectDB from "@/utils/connectDB";
+import DashboardPage from "@/template//DashboardPage"
+import { getServerSession } from "next-auth"
+import { authOptions } from "../api/auth/[...nextauth]/route"
+import User from "src/models/Users";
 
-function Dashboard(){
-    return(
-        <DashboardPage/>
+
+async function Dashboard() {
+
+    await connectDB()
+    const session = await getServerSession(authOptions);
+    const user = User.findOne({ email: session?.user.email })
+    console.log(user);
+
+    return (
+        <DashboardPage createdAt={user.createdAt} />
     )
 }
 

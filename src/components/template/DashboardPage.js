@@ -7,7 +7,7 @@ function DashboardPage({ createdAt }) {
       <p>آگهی های خود را ثبت کنید تا هزاران نفر آن را مشاهده کنند</p>
       <div className={styles.createdAt}>
         <p>تاریخ عضویت:</p>
-        <span>131443143</span>
+        <span>{createdAt?new Date(createdAt).toLocaleDateString("fa-IR"):"1402/07/02"}</span>
       </div>
     </div>
   );
