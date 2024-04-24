@@ -3,6 +3,9 @@
 import { useState } from "react"
 import styles from "./AddProfilePage.module.css"
 import TextInput from "../module/TextInput"
+import RadioList from "../module/RadioList"
+import TextList from "../module/TextList"
+import CustomDatePicker from "../module/CustomDatePicker"
 
 
 function AddProfilePage() {
@@ -20,6 +23,11 @@ function AddProfilePage() {
         amenities: []
 
     })
+
+
+    const submitHandler=()=>{
+        console.log(profileData);
+    }
 
     return (
         <div className={styles.container}>
@@ -56,6 +64,14 @@ function AddProfilePage() {
                 profileData={profileData}
                 setProfileData={setProfileData}
             />
+            <RadioList profileData={profileData} setProfileData={setProfileData} />
+            <TextList title={"امکانات رفاهی"} profileData={profileData} setProfileData={setProfileData} type={"amenities"} />
+            <TextList title={"امکانات رفاهی"} profileData={profileData} setProfileData={setProfileData} type={"rules"} />
+            <CustomDatePicker profileData={profileData} setProfileData={setProfileData} />
+
+            <button className={styles.submit} onClick={submitHandler}>
+                ثبت آگهی
+            </button>
 
         </div>
     )
