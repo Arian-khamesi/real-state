@@ -3,7 +3,7 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { sp } from "@/utils/replaceNumber";
 import { icons } from "@/constants/icons";
-import styles from "@/module/Card.module.css";
+import styles from "./Card.module.css";
 
 function Card({ data: { _id, category, title, location, price } }) {
   return (
