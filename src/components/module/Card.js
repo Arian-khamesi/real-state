@@ -2,8 +2,8 @@ import Link from "next/link";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { sp } from "@/utils/replaceNumber";
-import { icons } from "@/constants/icons";
 import styles from "./Card.module.css";
+import { icons } from "src/constants/icons";
 
 function Card({ data: { _id, category, title, location, price } }) {
   return (

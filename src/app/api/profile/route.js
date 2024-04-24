@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { Types } from "mongoose";
 import connectDB from "@/utils/connectDB";
-import User from "@/models/User";
-import Profile from "@/models/Profile";
+import User from "../../../models/Users";
+import Profile from "../../../models/Profile";
 
 export async function GET() {
   try {
