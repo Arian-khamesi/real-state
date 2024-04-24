@@ -1,5 +1,6 @@
 const { FiCircle } = require("react-icons/fi");
 import { categories, cities, services } from "../../constants/strings";
+import CategoryCard from "../module/CategoryCard";
 import styles from "./HomePage.module.css"
 
 function HomePage() {
@@ -21,6 +22,12 @@ function HomePage() {
                         ))}
                     </ul>
                 </div>
+            </div>
+            <div className={styles.categories}>
+                <CategoryCard title={"خانه ویلایی"} name={"villa"}/>
+                <CategoryCard title={"آپارتمان"} name={"apartment"}/>
+                <CategoryCard title={"مغازه"} name={"store"}/>
+                <CategoryCard title={"دفتر"} name={"office"}/>
             </div>
         </div>
     )
