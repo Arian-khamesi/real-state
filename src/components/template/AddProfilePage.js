@@ -6,6 +6,9 @@ import TextInput from "../module/TextInput"
 import RadioList from "../module/RadioList"
 import TextList from "../module/TextList"
 import CustomDatePicker from "../module/CustomDatePicker"
+import toast, { Toaster } from "react-hot-toast"
+import { ThreeDots } from "react-loader-spinner"
+import Loader from "../module/Loader"
 
 
 function AddProfilePage() {
@@ -24,8 +27,11 @@ function AddProfilePage() {
 
     })
 
+    const [loading, setLoading] = useState(false)
+
 
     const submitHandler = async () => {
+        setLoading(true)
         console.log(profileData);
         const res = await fetch("/api/profile", {
             method: POST,
@@ -33,11 +39,11 @@ function AddProfilePage() {
             headers: { "Content-Type": "application/json" }
         })
         const data = res.json();
-
+        setLoading(false)
         if (data.error) {
-            console.log(data);
+            toast.error(data.error)
         } else {
-            console.log("success", data);
+            toast.success(data.message)
         }
     }
 
@@ -81,9 +87,12 @@ function AddProfilePage() {
             <TextList title={"امکانات رفاهی"} profileData={profileData} setProfileData={setProfileData} type={"rules"} />
             <CustomDatePicker profileData={profileData} setProfileData={setProfileData} />
 
-            <button className={styles.submit} onClick={submitHandler}>
-                ثبت آگهی
-            </button>
+            <Toaster />
+
+            {loading ? <Loader /> :
+                <button className={styles.submit} onClick={submitHandler}>
+                    ثبت آگهی
+                </button>}
 
         </div>
     )
