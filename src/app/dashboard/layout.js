@@ -2,15 +2,27 @@ import DashboardSidebar from "@/layout//DashboardSidebar"
 import { getServerSession } from "next-auth"
 import { authOptions } from "../api/auth/[...nextauth]/route"
 import { redirect } from "next/navigation"
+import connectDB from "@/utils/connectDB"
+import User from "src/models/Users"
+
+export const metadata = {
+    title: "پنل کاربری املاک | پروژه جامع",
+   
+  };
 
 async function DashboardLayout({ children }) {
 
-const session=await getServerSession(authOptions)
+    const session = await getServerSession(authOptions)
+    // if(!session) redirect("/signin")
 
-// if(!session) redirect("/signin")
+    await connectDB();
+    const user = await User.findOne({ email: session.user.email })
+
+    if (!user) return <h3>مشکلی پیش آمده است</h3>
+
 
     return (
-        < DashboardSidebar>
+        < DashboardSidebar role={user.role} email={session.user.email}>
             {children}
         </DashboardSidebar>
     )

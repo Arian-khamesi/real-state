@@ -25,10 +25,9 @@ function HomePage() {
                 </div>
             </div>
             <div className={styles.categories}>
-                <CategoryCard title={"خانه ویلایی"} name={"villa"} />
-                <CategoryCard title={"آپارتمان"} name={"apartment"} />
-                <CategoryCard title={"مغازه"} name={"store"} />
-                <CategoryCard title={"دفتر"} name={"office"} />
+                {Object.keys(categories).map(i => (
+                    <CategoryCard title={categories[i]} name={i} />
+                ))}
             </div>
             <div className={styles.city}>
                 <h3>شهر های پر بازدید</h3>
