@@ -13,7 +13,7 @@ export async function POST(req) {
 
         if (!userName || !email || !password) {
             return NextResponse.json(
-                { error: "plz enter correct data and complete fillds" },
+                { error: "لطفا اطلاعات صحیح را وارد کرده و تمامی فیلد ها را تکمیل کنید" },
                 { status: 422 }
             )
         }
@@ -24,13 +24,13 @@ export async function POST(req) {
 
         if (existingUser) {
             return NextResponse.json(
-                { error: "user exist" },
+                { error: "کاربری با این اطلاعات قبلا ثبت نام کرده است" },
                 { status: 422 }
             )
         }
 
 
-        const hashedPassword = hashPassword(password)
+        const hashedPassword = await hashPassword(password)
 
         const newUser = await User.create({
             userName,
@@ -40,14 +40,14 @@ export async function POST(req) {
         console.log(newUser);
 
         return NextResponse.json(
-            { message: "User successfully created" },
-            { status: 200 }
+            { message: "کاربر با موفقیت ثبت نام شد" },
+            { status: 201 }
         )
     }
     catch (err) {
         console.log(err);
         return NextResponse.json(
-            { error: "some things wrong in server" },
+            { error: "مشکلی در سرور پیش آمده است" },
             { status: 500 }
         )
     }

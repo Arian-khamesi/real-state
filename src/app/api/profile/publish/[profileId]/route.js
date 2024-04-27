@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import connectDB from "@/utils/connectDB";
-import Profile from "@/models/Profile";
-import User from "@/models/User";
+import Profile from "src/models/Profile";
+import User from "src/models/Users";
+
+
 
 export async function PATCH(req, context) {
   try {

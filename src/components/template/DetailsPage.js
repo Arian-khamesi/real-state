@@ -3,12 +3,16 @@ import { AiOutlinePhone } from "react-icons/ai";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiCalendarCheck } from "react-icons/bi";
 import { e2p, sp } from "@/utils/replaceNumber";
-import ItemList from "@/module/ItemList";
+import ItemList from "../module/ItemList";
 import Title from "../module/Title";
-import ShareButton from "@/module/ShareButton";
-import { icons } from "@/constants/icons";
-import { categories } from "@/constants/strings";
+import ShareButton from "../module/ShareButton";
+import { icons } from "src/constants/icons";
+import { categories } from "src/constants/strings";
 import styles from "./DetailsPage.module.css";
+
+
+
+
 
 
 function DetailsPage({

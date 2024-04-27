@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { Toaster, toast } from "react-hot-toast";
 import Loader from "../module/Loader";
 import styles from "./SignupPage.module.css";
+import { hashPassword } from "@/utils/auth";
 
 function SignupPage() {
     const [userName, setUserName] = useState("");
@@ -18,7 +19,7 @@ function SignupPage() {
 
     const signupHandler = async (e) => {
         e.preventDefault();
-
+        console.log({ userName, email, password });
         if (password !== rePassword) {
             toast.error("رمز و تکرار آن برابر نیست");
             return;
@@ -26,7 +27,7 @@ function SignupPage() {
         setLoading(true);
         const res = await fetch("/api/auth/signup", {
             method: "POST",
-            body: JSON.stringify({userName, email, password }),
+            body: JSON.stringify({ userName, email, password }),
             headers: { "Content-Type": "application/json" },
         });
         const data = await res.json();

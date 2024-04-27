@@ -42,17 +42,31 @@ function AddProfilePage({ data }) {
         setLoading(true)
         console.log(profileData);
         const res = await fetch("/api/profile", {
-            method: POST,
+            method: "POST",
             body: JSON.stringify(profileData),
             headers: { "Content-Type": "application/json" }
         })
-        const data = res.json();
+        const data = await res.json();
         setLoading(false)
         if (data.error) {
             toast.error(data.error)
         } else {
             toast.success(data.message)
             router.refresh();
+            setProfileData({
+                    title: "",
+                    description: "",
+                    location: "",
+                    phone: "",
+                    price: "",
+                    realState: "",
+                    constructionDate: new Date(),
+                    category: "",
+                    rules: [],
+                    amenities: []
+
+
+                })
         }
     }
 
@@ -105,6 +119,12 @@ function AddProfilePage({ data }) {
                 setProfileData={setProfileData}
             />
             <TextInput
+                title="قیمت(تومان)"
+                name={"price"}
+                profileData={profileData}
+                setProfileData={setProfileData}
+            />
+            <TextInput
                 title={"بنگاه"}
                 name={"realState"}
                 profileData={profileData}
@@ -112,7 +132,7 @@ function AddProfilePage({ data }) {
             />
             <RadioList profileData={profileData} setProfileData={setProfileData} />
             <TextList title={"امکانات رفاهی"} profileData={profileData} setProfileData={setProfileData} type={"amenities"} />
-            <TextList title={"امکانات رفاهی"} profileData={profileData} setProfileData={setProfileData} type={"rules"} />
+            <TextList title={"قوانین"} profileData={profileData} setProfileData={setProfileData} type={"rules"} />
             <CustomDatePicker profileData={profileData} setProfileData={setProfileData} />
 
             <Toaster />

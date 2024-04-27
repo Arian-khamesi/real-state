@@ -10,7 +10,7 @@ const cities = [
   "خرم آباد",
 ];
 const categories = {
-  apartment: "آپارتمان",
+  appartment: "آپارتمان",
   villa: "ویلا",
   store: "مغازه",
   office: "دفتر",

@@ -4,38 +4,38 @@ import User from "src/models/Users";
 import { verifyPassword } from "@/utils/auth";
 import connectDB from "@/utils/connectDB";
 
- export const authOptions = {
-    session: {
-        strategy: "jwt"
-    },
-    providers: [CredentialsProvider({
-        async authorize(credentials) {
-            const { email, password } = credentials
+export const authOptions = {
+    session: { strategy: "jwt" },
+    providers: [
+        CredentialsProvider({
+            async authorize(credentials) {
+                const { email, password  } = credentials
 
-            try {
-                await connectDB()
-            } catch (err) {
-                throw new Error("smth wrong in server")
+                try {
+                    await connectDB()
+                } catch (error) {
+                    throw new Error("مشکلی در سرور پیش آمده")
+                }
+
+                if (!email || !password) {
+                    throw new Error("لطفا اطلاعات صحیح و معتبر وارد کنید")
+                }
+                    
+                const user = await User.findOne({ email })
+
+                if (!user)
+                    throw new Error("لطفا ابتدا حساب کاربری ایجاد کنید")
+
+                const isValid = await verifyPassword(password, user.password)
+
+                if (!isValid)
+                    throw new Error("ایمیل یا رمز عبور اشتباه است")
+
+                return { email }
             }
 
-            if (!email || !password)
-                throw new Error("plz enter correct and valid infos")
-
-
-            const user = User.findOne({ email })
-
-            if (!user)
-                throw new Error("plz signup first")
-
-            const isValid = await verifyPassword(password, user.password)
-
-            if (!isValid)
-                throw new Error("email or password is incorrect")
-
-            return { email }
-        }
-
-    })]
+        })
+    ]
 }
 
 const handler = NextAuth(authOptions);

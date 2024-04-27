@@ -1,5 +1,6 @@
-import DashboardCard from "@/module/DashboardCard";
-import styles from "@/template/MyProfilesPage.module.css";
+
+import styles from "./MyProfilesPage.module.css";
+import DashboardCard from "../module/DashboardCard";
 
 function MyProfilesPage({ profiles }) {
   return (

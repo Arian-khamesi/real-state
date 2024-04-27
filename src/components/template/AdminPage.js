@@ -1,4 +1,5 @@
-import AdminCard from "@/module/AdminCard";
+
+import AdminCard from "../module/AdminCard";
 import styles from "./AdminPage.module.css";
 
 function AdminPage({ profiles }) {

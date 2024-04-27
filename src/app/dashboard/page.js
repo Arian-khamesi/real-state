@@ -9,7 +9,7 @@ async function Dashboard() {
 
     await connectDB()
     const session = await getServerSession(authOptions);
-    const user = User.findOne({ email: session?.user.email })
+    const user = await User.findOne({ email: session?.user.email })
     console.log(user);
 
     return (

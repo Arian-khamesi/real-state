@@ -8,7 +8,7 @@ import LogoutButton from "../module/LogoutButton";
 
 async function DashboardSidebar({ children, email, role }) {
 
-    // const session = await getServerSession(authOptions)
+    const session = await getServerSession(authOptions)
 
     return (
         <div className={styles.container}>

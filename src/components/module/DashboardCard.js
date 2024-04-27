@@ -4,8 +4,9 @@ import { useRouter } from "next/navigation";
 import { Toaster, toast } from "react-hot-toast";
 import { AiOutlineDelete } from "react-icons/ai";
 import { FiEdit } from "react-icons/fi";
-import Card from "@/module/Card";
+import Card from "./Card";
 import styles from "./DashboardCard.module.css";
+
 
 function DashboardCard({ data }) {
   const router = useRouter();

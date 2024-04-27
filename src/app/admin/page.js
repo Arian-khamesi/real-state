@@ -1,11 +1,16 @@
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/api/auth/[...nextauth]/route";
-import AdminPage from "@/template/AdminPage";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+import AdminPage from "@/template//AdminPage";
 import connectDB from "@/utils/connectDB";
-import User from "@/models/User";
-import Profile from "@/models/Profile";
-import DashboardSidebar from "@/layout/DashboardSidebar";
+import User from "src/models/Users";
+import Profile from "src/models/Profile";
+import DashboardSidebar from "@/layout//DashboardSidebar";
+
+
+
+
+
 
 export const metadata = {
   title: "پنل ادمین املاک | پروژه",

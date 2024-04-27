@@ -13,7 +13,7 @@ export const metadata = {
 async function DashboardLayout({ children }) {
 
     const session = await getServerSession(authOptions)
-    // if(!session) redirect("/signin")
+    if(!session) redirect("/signin")
 
     await connectDB();
     const user = await User.findOne({ email: session.user.email })
