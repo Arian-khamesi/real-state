@@ -7,13 +7,13 @@ import User from "src/models/Users"
 
 export const metadata = {
     title: "پنل کاربری املاک | پروژه جامع",
-   
-  };
+
+};
 
 async function DashboardLayout({ children }) {
 
     const session = await getServerSession(authOptions)
-    if(!session) redirect("/signin")
+    if (!session) redirect("/signin")
 
     await connectDB();
     const user = await User.findOne({ email: session.user.email })

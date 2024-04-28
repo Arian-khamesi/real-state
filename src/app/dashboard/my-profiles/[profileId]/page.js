@@ -1,6 +1,8 @@
-import Profile from "@/models/Profile";
-import AddProfilePage from "@/template/AddProfilePage";
+import Profile from "src/models/Profile";
+import AddProfilePage from "@/template//AddProfilePage";
 import connectDB from "@/utils/connectDB";
+
+
 
 async function Edit({ params: { profileId } }) {
   await connectDB();
