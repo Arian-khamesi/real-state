@@ -1,4 +1,5 @@
 import connectDB from "@/utils/connectDB";
+import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 import Profile from "src/models/Profile";
 import User from "src/models/Users";
