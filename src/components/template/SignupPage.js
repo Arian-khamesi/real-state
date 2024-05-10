@@ -33,6 +33,7 @@ function SignupPage() {
         const data = await res.json();
         setLoading(false);
         if (res.status === 201) {
+            toast.success("ثبت نام شما با موفقیت انجام شد")
             router.push("/signin");
         } else {
             toast.error(data.error);
