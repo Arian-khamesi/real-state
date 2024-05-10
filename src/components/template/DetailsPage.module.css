@@ -119,3 +119,16 @@
     margin-left: 5px;
     color: #304ffe;
   }
+  .price_number{
+    display: flex;
+    align-items: center;
+    color: grey;
+    margin-bottom: 20px;
+    height: 20px;
+  }
+
+  @media (min-width: 300px) {
+    .price_number{
+      font-size: 14px;
+    }
+  }

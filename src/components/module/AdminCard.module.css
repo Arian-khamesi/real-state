@@ -45,3 +45,12 @@
   .container button:hover {
     color: #000;
   }
+
+  @media (max-width: 450px) {
+    .container {
+      border-bottom: 2px solid #304ffe;
+      padding-bottom: 10px;
+      margin-bottom: 80px;
+    }
+    
+  }

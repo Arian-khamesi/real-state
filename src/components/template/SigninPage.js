@@ -34,7 +34,7 @@ function SigninPage() {
   return (
     <div className={styles.form}>
       <h4>فرم ورود</h4>
-      <form>
+      <form className={styles.form_in}>
         <label>ایمیل:</label>
         <input
           type="text"
@@ -50,7 +50,7 @@ function SigninPage() {
         {loading ? (
           <Loader />
         ) : (
-          <button type="submit" onClick={signinHandler}>
+          <button type="submit" onClick={signinHandler} className={styles.btn_in}>
             ورود
           </button>
         )}

@@ -6,10 +6,11 @@ import styles from "./Sidebar.module.css";
 function Sidebar() {
   return (
     <div className={styles.container}>
-      <p>
-        <HiFilter />
+      <p className={styles.sidebar_title}>
+        <HiFilter className={styles.icon_display} />
         دسته بندی
       </p>
+      <div>
       <Link href="/buy-residential">همه</Link>
       {Object.keys(categories).map((i) => (
         <Link
@@ -21,6 +22,7 @@ function Sidebar() {
           {categories[i]}
         </Link>
       ))}
+      </div>
     </div>
   );
 }

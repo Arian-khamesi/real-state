@@ -59,7 +59,7 @@ function DetailsPage({
             {icons[category]}
             {categories[category]}
           </p>
-          <p>{sp(price)} تومان</p>
+          <p className={styles.price_number}>{sp(price)} تومان</p>
           <p>
             <BiCalendarCheck />
             {new Date(constructionDate).toLocaleDateString("fa-IR")}

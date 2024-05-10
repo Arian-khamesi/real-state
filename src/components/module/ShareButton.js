@@ -16,7 +16,7 @@ function ShareButton() {
     <CopyToClipboard text={url}>
       <div className={styles.container}>
         <LuShare2 />
-        <button>اشتراک گذاری</button>
+        <button className={styles.shareButton}>اشتراک گذاری</button>
       </div>
     </CopyToClipboard>
   );

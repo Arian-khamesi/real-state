@@ -1,11 +1,19 @@
 .container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .container p {
     display: flex;
     font-size: 1.2rem;
     font-weight: 400;
+  }
+
+  .container div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   .container p svg {
@@ -17,4 +25,45 @@
   .container a {
     color: grey;
     margin: 5px;
+  }
+
+  @media (min-width: 300px) {
+    .container p {
+      font-size: 14px;
+    }
+  }
+  
+  
+  @media (min-width: 450px) {
+    .container p {
+      font-size: 2vh;
+    }
+    .icon_display{
+      display: block;
+    }
+  }
+  @media (max-width: 490px) {
+    .icon_display{
+      display: none;
+    }
+    .container div{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  @media (min-width: 700px) {
+    .container p {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (min-width: 500px) {
+    .container p {
+      font-size: 1.2rem;
+    }
+    .icon_display{
+      display: block;
+    }
   }

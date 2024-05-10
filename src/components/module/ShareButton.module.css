@@ -24,3 +24,15 @@
     font-size: 1.2rem;
     color: #304ffe;
   }
+
+  @media (max-width: 400px) {
+    .container button {
+      border: none;
+      background: none;
+      font-size: 14px;
+      color: grey;
+      height: 20px;
+      transition: all ease-in 0.1s;
+      cursor: pointer;
+    }
+  }

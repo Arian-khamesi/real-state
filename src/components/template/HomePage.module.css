@@ -106,3 +106,13 @@
       justify-content: center;
     }
   }
+  @media (max-width: 819px) {
+  
+    .categories {
+      justify-content: space-around;
+    }
+    .city ul {
+      justify-content: space-around;
+    }
+  
+  }

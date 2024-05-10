@@ -24,3 +24,23 @@ input,
 textarea {
   font-family: inherit;
 }
+
+@media (min-width: 300px) {
+  .title {
+    font-size: 14px;
+  }
+}
+
+
+@media (min-width: 450px) {
+  .title {
+    font-size: 2vh;
+  }
+}
+
+
+@media (min-width: 700px) {
+  .title {
+    font-size: 20px;
+  }
+}

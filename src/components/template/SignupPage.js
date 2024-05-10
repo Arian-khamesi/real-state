@@ -42,7 +42,7 @@ function SignupPage() {
     return (
         <div className={styles.form}>
             <h4>فرم ثبت نام</h4>
-            <form>
+            <form className={styles.form_up}>
                 <label>نام کاربری:</label>
                 <input
                     type="text"

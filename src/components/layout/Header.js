@@ -13,10 +13,10 @@ function Header() {
       <div>
         <ul>
           <li>
-            <Link href="/">صفحه اصلی</Link>
+            <Link href="/"  className="title">صفحه اصلی</Link>
           </li>
           <li>
-            <Link href="/buy-residential">آگهی ها</Link>
+            <Link href="/buy-residential" className="title">آگهی ها</Link>
           </li>
         </ul>
       </div>
