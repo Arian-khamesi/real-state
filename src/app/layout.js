@@ -6,7 +6,7 @@ import NextAuthProvider from "@/providers/NextAuthProvider";
 export const metadata = {
   title: "املاک | پروژه جامع",
   description: "سامانه جامع خرید و فروش املاک",
-  icons:{icon:"./favicon.ico"}
+  icons: { icon: "./favicon.ico" }
 };
 
 export default function RootLayout({ children }) {

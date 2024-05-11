@@ -9,9 +9,9 @@ async function Signin() {
     if(session) redirect("/")
 
     return (
-        <>
+        <div>
             <SigninPage />
-        </>
+        </div>
     )
 }
 

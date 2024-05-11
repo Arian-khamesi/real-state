@@ -12,12 +12,13 @@ function Sidebar() {
       </p>
       <div>
       <Link href="/buy-residential">همه</Link>
-      {Object.keys(categories).map((i) => (
+      {Object.keys(categories).map((i,index) => (
         <Link
           href={{
             pathname: "/buy-residential",
             query: { category: i },
           }}
+          key={index}
         >
           {categories[i]}
         </Link>
